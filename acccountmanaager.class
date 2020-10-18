@@ -1,0 +1,10 @@
+
+public with sharing class accountmanager {
+   
+
+@AuraEnabled(cacheable=true)
+public static list<Account>  getAccount(){
+    return [select id, name,phone FROM  Account limit 10];
+    
+
+    }
